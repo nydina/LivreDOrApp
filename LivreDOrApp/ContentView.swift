@@ -8,19 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var texts = MessageViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            List {
+                ForEach(texts.myMessages.messages, id: \.row.id) {
+                    text in
+                    NavigationLink(destination: {
+                        DetailView(messageContent: text.row.content)
+                    }, label: {
+                        RowView(messageContent: text.row.content)
+                    })
+                }
+            }
+            .onAppear {
+                Task {
+                    texts.myMessages = try await texts.getMessage()
+                }
         }
-        .padding()
+        }
     }
+    
+    
+    
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
+    
     static var previews: some View {
         ContentView()
+        
     }
 }

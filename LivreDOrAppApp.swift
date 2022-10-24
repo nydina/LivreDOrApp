@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct LivreDOrAppApp: App {
+    @StateObject var viewModel = MessageViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(viewModel)
         }
     }
 }
