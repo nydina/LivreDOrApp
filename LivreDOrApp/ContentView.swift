@@ -8,31 +8,51 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var texts = MessageViewModel()
+    @EnvironmentObject var texts : MessageViewModel
     
     var body: some View {
         NavigationView {
+            
             List {
-                ForEach(texts.myMessages.messages, id: \.row.id) {
+                ForEach(texts.myMessages.messages, id: \.id) {
                     text in
                     NavigationLink(destination: {
-                        DetailView(messageContent: text.row.content)
+                        DetailView(message: text)
                     }, label: {
-                        RowView(messageContent: text.row.content)
+                        RowView(messageContent: text.content)
                     })
+                }
+                .onDelete { i in i.forEach { index in
+                    let message = texts.myMessages.messages[index]
+                    Task {
+                        texts.myMessages.messages.remove(at: index)
+                    }
+                    
+                    Task {
+                        try await texts.deleteMessage(id: message.id)
+                    }
+                }
                 }
             }
             .onAppear {
                 Task {
                     texts.myMessages = try await texts.getMessage()
                 }
-        }
-        }
+            }
+            .refreshable {
+                await texts.reload()
+            }
+            .overlay(alignment: .top) {
+                if texts.error != nil {
+                    ErrorView(error: $texts.error)
+                }
+            }
+            .navigationTitle("Message")
+            .navigationBarTitleDisplayMode(.large)
+            .navigationBarItems(trailing: AddButton())
+
+        }.accentColor(.teal)
     }
-    
-    
-    
-    
 }
 
 struct ContentView_Previews: PreviewProvider {

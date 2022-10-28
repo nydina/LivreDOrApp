@@ -15,6 +15,14 @@
 		BB1338652906C37900329B4F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1338642906C37900329B4F /* Message.swift */; };
 		BB1338682906C5BA00329B4F /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1338672906C5BA00329B4F /* MessageViewModel.swift */; };
 		BB13386A290701B100329B4F /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB133869290701B100329B4F /* RowView.swift */; };
+		BB139E1C2907D25300160BED /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB139E1B2907D25300160BED /* AddButton.swift */; };
+		BB139E1E2907D33100160BED /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB139E1D2907D33100160BED /* FormView.swift */; };
+		BB139E20290821AF00160BED /* AddPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB139E1F290821AF00160BED /* AddPhoto.swift */; };
+		BB6399A329096B66006D5EC5 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6399A229096B66006D5EC5 /* ErrorView.swift */; };
+		BB6399A529097FD8006D5EC5 /* RefreshActionPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6399A429097FD8006D5EC5 /* RefreshActionPerformer.swift */; };
+		BB6399A7290980C5006D5EC5 /* RetryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6399A6290980C5006D5EC5 /* RetryButton.swift */; };
+		BBC2B174290A71B800273339 /* TextEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2B173290A71B800273339 /* TextEditorView.swift */; };
+		BBC2B178290B0AF200273339 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2B177290B0AF200273339 /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +36,14 @@
 		BB1338642906C37900329B4F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		BB1338672906C5BA00329B4F /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		BB133869290701B100329B4F /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		BB139E1B2907D25300160BED /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
+		BB139E1D2907D33100160BED /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
+		BB139E1F290821AF00160BED /* AddPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhoto.swift; sourceTree = "<group>"; };
+		BB6399A229096B66006D5EC5 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		BB6399A429097FD8006D5EC5 /* RefreshActionPerformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshActionPerformer.swift; sourceTree = "<group>"; };
+		BB6399A6290980C5006D5EC5 /* RetryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryButton.swift; sourceTree = "<group>"; };
+		BBC2B173290A71B800273339 /* TextEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorView.swift; sourceTree = "<group>"; };
+		BBC2B177290B0AF200273339 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +81,15 @@
 				BB1338632906C35D00329B4F /* Model */,
 				BB1338602906C31C00329B4F /* Views */,
 				BB1338512906C16D00329B4F /* ContentView.swift */,
+				BBC2B177290B0AF200273339 /* SwiftUIView.swift */,
 				BB133869290701B100329B4F /* RowView.swift */,
+				BB139E1B2907D25300160BED /* AddButton.swift */,
+				BB139E1F290821AF00160BED /* AddPhoto.swift */,
+				BB139E1D2907D33100160BED /* FormView.swift */,
+				BBC2B173290A71B800273339 /* TextEditorView.swift */,
 				BB1338612906C34B00329B4F /* DetailView.swift */,
+				BB6399A229096B66006D5EC5 /* ErrorView.swift */,
+				BB6399A6290980C5006D5EC5 /* RetryButton.swift */,
 				BB1338532906C16F00329B4F /* Assets.xcassets */,
 				BB1338552906C16F00329B4F /* LivreDOrApp.entitlements */,
 				BB1338562906C16F00329B4F /* Preview Content */,
@@ -101,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				BB1338672906C5BA00329B4F /* MessageViewModel.swift */,
+				BB6399A429097FD8006D5EC5 /* RefreshActionPerformer.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -175,10 +199,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBC2B174290A71B800273339 /* TextEditorView.swift in Sources */,
+				BB139E1E2907D33100160BED /* FormView.swift in Sources */,
 				BB1338522906C16D00329B4F /* ContentView.swift in Sources */,
+				BB6399A7290980C5006D5EC5 /* RetryButton.swift in Sources */,
+				BB139E1C2907D25300160BED /* AddButton.swift in Sources */,
 				BB13386A290701B100329B4F /* RowView.swift in Sources */,
+				BB139E20290821AF00160BED /* AddPhoto.swift in Sources */,
+				BB6399A329096B66006D5EC5 /* ErrorView.swift in Sources */,
+				BBC2B178290B0AF200273339 /* SwiftUIView.swift in Sources */,
 				BB1338622906C34B00329B4F /* DetailView.swift in Sources */,
 				BB1338682906C5BA00329B4F /* MessageViewModel.swift in Sources */,
+				BB6399A529097FD8006D5EC5 /* RefreshActionPerformer.swift in Sources */,
 				BB1338652906C37900329B4F /* Message.swift in Sources */,
 				BB1338502906C16D00329B4F /* LivreDOrAppApp.swift in Sources */,
 			);

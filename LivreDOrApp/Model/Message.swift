@@ -7,25 +7,20 @@
 
 import Foundation
 
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
+/// This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
-//   let myMessages = try? newJSONDecoder().decode(MyMessages.self, from: jsonData)
+//   let myData = try? newJSONDecoder().decode(MyData.self, from: jsonData)
 
 import Foundation
 
-// MARK: - MyMessages
-struct MyMessages: Codable {
-    let messages: [Message]
+// MARK: - MyData
+struct MyData: Codable {
+    var messages: [Message]
 }
 
 // MARK: - Message
-struct Message: Codable {
-    let row: Row
-}
-
-// MARK: - Row
-struct Row: Codable, Identifiable {
+struct Message: Identifiable, Codable {
     let id: Int
     var content: String
     let createdAt: String?

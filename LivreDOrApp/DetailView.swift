@@ -8,14 +8,32 @@
 import SwiftUI
 
 struct DetailView: View {
-    let messageContent: String
+    @EnvironmentObject var viewModel: MessageViewModel
+    @State var message : Message
+    @State private var text: String = ""
     var body: some View {
-        Text(messageContent)
+        VStack {
+            TextField(message.content, text: $text)
+            Button("update") {
+                Task {
+                    self.message.content = text
+                    try await viewModel.putMessage(message)
+                }
+            }
+            Button("delete") {
+                Task {
+                    try await viewModel.deleteMessage(id: message.id)
+                }
+            }
+        }
+        
     }
 }
 
-struct DetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailView(messageContent: "Hello Dina")
-    }
-}
+//struct DetailView_Previews: PreviewProvider {
+//    @EnvironmentObject var viewModel: MessageViewModel
+//    static var previews: some View {
+//        DetailView()
+//            .environmentObject(MessageViewModel())
+//    }
+//}

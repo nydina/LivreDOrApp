@@ -20,6 +20,7 @@ struct RowView: View {
                             .overlay(Circle().stroke(Color.gray, lineWidth: 1))
                                         Text(messageContent)
         }
+        .frame(maxHeight: 75)
     }
 }
 
