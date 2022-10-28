@@ -10,7 +10,8 @@ import SwiftUI
 struct FormView: View {
     @EnvironmentObject var viewModel: MessageViewModel
     @Environment(\.presentationMode) var presentationMode
-   
+    @Binding var arrayCount: Int
+
     var body: some View {
         NavigationView {
             VStack {
@@ -27,9 +28,10 @@ struct FormView: View {
                                 }
                                 ToolbarItem(placement: .navigationBarTrailing) {
                                     Button("Publish") {
+                                        arrayCount = viewModel.myMessages.messages.count
                                         Task {
                                             viewModel.message = try await viewModel.postMessage(content: viewModel.content)
-//                                            await viewModel.reload()
+
                                         }
                                         Task {
                                             presentationMode.wrappedValue.dismiss()
@@ -49,7 +51,7 @@ struct FormView: View {
 struct FormView_Previews: PreviewProvider {
     @EnvironmentObject var viewModel: MessageViewModel
     static var previews: some View {
-        FormView()
+        FormView(arrayCount: .constant(0))
             .environmentObject(MessageViewModel())
     }
 }

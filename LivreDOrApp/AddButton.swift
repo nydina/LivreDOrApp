@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddButton: View {
     @State private var showingFormView = false
+    @Binding var arrayCount: Int
     var body: some View {
         Button {
             showingFormView = true
@@ -16,7 +17,7 @@ struct AddButton: View {
             Image(systemName: "plus")
         }
         .sheet(isPresented: $showingFormView) {
-            FormView()
+            FormView(arrayCount: $arrayCount)
         }
         
     }
@@ -24,6 +25,6 @@ struct AddButton: View {
 
 struct AddButton_Previews: PreviewProvider {
     static var previews: some View {
-        AddButton()
+        AddButton(arrayCount: .constant(0))
     }
 }

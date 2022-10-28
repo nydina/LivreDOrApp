@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var texts : MessageViewModel
-    
+    @EnvironmentObject var viewModel : MessageViewModel
+    @State private var arrayCount = 0
     var body: some View {
         NavigationView {
             
             List {
-                ForEach(texts.myMessages.messages, id: \.id) {
+                ForEach(viewModel.myMessages.messages, id: \.id) {
                     text in
                     NavigationLink(destination: {
                         DetailView(message: text)
@@ -23,33 +23,39 @@ struct ContentView: View {
                     })
                 }
                 .onDelete { i in i.forEach { index in
-                    let message = texts.myMessages.messages[index]
+                    let message = viewModel.myMessages.messages[index]
                     Task {
-                        texts.myMessages.messages.remove(at: index)
+                        viewModel.myMessages.messages.remove(at: index)
                     }
                     
                     Task {
-                        try await texts.deleteMessage(id: message.id)
+                        try await viewModel.deleteMessage(id: message.id)
                     }
                 }
                 }
             }
-            .onAppear {
+            .onChange(of: arrayCount, perform: { _ in
+                arrayCount = viewModel.myMessages.messages.count
                 Task {
-                    texts.myMessages = try await texts.getMessage()
+                    await viewModel.reload()
+                }
+            })
+                        .onAppear {
+                Task {
+                    viewModel.myMessages = try await viewModel.getMessage()
                 }
             }
             .refreshable {
-                await texts.reload()
+                await viewModel.reload()
             }
             .overlay(alignment: .top) {
-                if texts.error != nil {
-                    ErrorView(error: $texts.error)
+                if viewModel.error != nil {
+                    ErrorView(error: $viewModel.error)
                 }
             }
             .navigationTitle("Message")
             .navigationBarTitleDisplayMode(.large)
-            .navigationBarItems(trailing: AddButton())
+            .navigationBarItems(trailing: AddButton(arrayCount: $arrayCount))
 
         }.accentColor(.teal)
     }
