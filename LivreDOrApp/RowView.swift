@@ -16,9 +16,9 @@ struct RowView: View {
                 .scaledToFill()
                 .frame(width: 50, height: 50)
                 .clipShape(Circle())
-                            .shadow(radius: 10)
-                            .overlay(Circle().stroke(Color.gray, lineWidth: 1))
-                                        Text(messageContent)
+                .shadow(radius: 10)
+                .overlay(Circle().stroke(Color.gray, lineWidth: 1))
+            Text(messageContent)
         }
         .frame(maxHeight: 75)
     }

@@ -13,7 +13,7 @@ struct FormView: View {
     @Binding var arrayCount: Int
 
     var body: some View {
-        NavigationView {
+        
             VStack {
                 AddPhoto()
                 ZStack {
@@ -29,10 +29,16 @@ struct FormView: View {
                                 ToolbarItem(placement: .navigationBarTrailing) {
                                     Button("Publish") {
                                         arrayCount = viewModel.myMessages.messages.count
+                                        
                                         Task {
                                             viewModel.message = try await viewModel.postMessage(content: viewModel.content)
 
                                         }
+                                        
+                                        Task {
+                                            viewModel.content = ""
+                                        }
+                                        
                                         Task {
                                             presentationMode.wrappedValue.dismiss()
                                         }
@@ -40,7 +46,8 @@ struct FormView: View {
                                 }
                             }
                     }
-                }
+                
+                
                 Spacer()}
         }.accentColor(.teal)
         
@@ -51,7 +58,9 @@ struct FormView: View {
 struct FormView_Previews: PreviewProvider {
     @EnvironmentObject var viewModel: MessageViewModel
     static var previews: some View {
-        FormView(arrayCount: .constant(0))
-            .environmentObject(MessageViewModel())
+        NavigationView {
+            FormView(arrayCount: .constant(0))
+                .environmentObject(MessageViewModel())
+        }
     }
 }

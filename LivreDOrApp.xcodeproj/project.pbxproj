@@ -22,7 +22,6 @@
 		BB6399A529097FD8006D5EC5 /* RefreshActionPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6399A429097FD8006D5EC5 /* RefreshActionPerformer.swift */; };
 		BB6399A7290980C5006D5EC5 /* RetryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6399A6290980C5006D5EC5 /* RetryButton.swift */; };
 		BBC2B174290A71B800273339 /* TextEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2B173290A71B800273339 /* TextEditorView.swift */; };
-		BBC2B178290B0AF200273339 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2B177290B0AF200273339 /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +42,6 @@
 		BB6399A429097FD8006D5EC5 /* RefreshActionPerformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshActionPerformer.swift; sourceTree = "<group>"; };
 		BB6399A6290980C5006D5EC5 /* RetryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryButton.swift; sourceTree = "<group>"; };
 		BBC2B173290A71B800273339 /* TextEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorView.swift; sourceTree = "<group>"; };
-		BBC2B177290B0AF200273339 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +79,6 @@
 				BB1338632906C35D00329B4F /* Model */,
 				BB1338602906C31C00329B4F /* Views */,
 				BB1338512906C16D00329B4F /* ContentView.swift */,
-				BBC2B177290B0AF200273339 /* SwiftUIView.swift */,
 				BB133869290701B100329B4F /* RowView.swift */,
 				BB139E1B2907D25300160BED /* AddButton.swift */,
 				BB139E1F290821AF00160BED /* AddPhoto.swift */,
@@ -207,7 +204,6 @@
 				BB13386A290701B100329B4F /* RowView.swift in Sources */,
 				BB139E20290821AF00160BED /* AddPhoto.swift in Sources */,
 				BB6399A329096B66006D5EC5 /* ErrorView.swift in Sources */,
-				BBC2B178290B0AF200273339 /* SwiftUIView.swift in Sources */,
 				BB1338622906C34B00329B4F /* DetailView.swift in Sources */,
 				BB1338682906C5BA00329B4F /* MessageViewModel.swift in Sources */,
 				BB6399A529097FD8006D5EC5 /* RefreshActionPerformer.swift in Sources */,

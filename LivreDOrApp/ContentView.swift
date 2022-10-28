@@ -34,17 +34,23 @@ struct ContentView: View {
                 }
                 }
             }
+            
+            //refresh automatically
             .onChange(of: arrayCount, perform: { _ in
                 arrayCount = viewModel.myMessages.messages.count
                 Task {
                     await viewModel.reload()
                 }
             })
-                        .onAppear {
+            
+            //read list from API
+            .onAppear {
                 Task {
                     viewModel.myMessages = try await viewModel.getMessage()
                 }
             }
+            
+            //pull to refresh
             .refreshable {
                 await viewModel.reload()
             }
@@ -56,15 +62,18 @@ struct ContentView: View {
             .navigationTitle("Message")
             .navigationBarTitleDisplayMode(.large)
             .navigationBarItems(trailing: AddButton(arrayCount: $arrayCount))
-
+            
         }.accentColor(.teal)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    
+struct ContentView_Previews:
+                                
+    PreviewProvider {
+    @EnvironmentObject var viewModel : MessageViewModel
     static var previews: some View {
         ContentView()
+            .environmentObject(MessageViewModel())
         
     }
 }
