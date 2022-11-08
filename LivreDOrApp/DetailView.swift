@@ -9,8 +9,10 @@ import SwiftUI
 
 struct DetailView: View {
     @EnvironmentObject var viewModel: MessageViewModel
+    @Environment(\.presentationMode) var presentationMode
     @State var message : Message
-//    @State private var text: String = ""
+    @State private var showingFormView = false
+
     var body: some View {
         VStack {
             ZStack {
@@ -32,10 +34,16 @@ struct DetailView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("update") {
+                    Button {
+                        showingFormView = true
+                        presentationMode.wrappedValue.dismiss()
                         Task {
                             try await viewModel.putMessage(message)
                         }
+                    } label: {
+                        Text("save")                    }
+                    .sheet(isPresented: $showingFormView) {
+                        UpdateMessageDetail(message: message)
                     }
                 }
             }

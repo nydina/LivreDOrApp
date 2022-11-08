@@ -14,42 +14,44 @@ struct FormView: View {
 
     var body: some View {
         
+        NavigationView {
             VStack {
-                AddPhoto()
-                ZStack {
-                    VStack(alignment: .leading){
-                        Text("What do you want to tell us?")
-                        TextEditorView()
-                            .toolbar {
-                                ToolbarItem(placement: .navigationBarLeading) {
-                                    Button("Cancel") {
-                                        presentationMode.wrappedValue.dismiss()
-                                    }
-                                }
-                                ToolbarItem(placement: .navigationBarTrailing) {
-                                    Button("Publish") {
-                                        arrayCount = viewModel.myMessages.messages.count
-                                        
-                                        Task {
-                                            viewModel.message = try await viewModel.postMessage(content: viewModel.content)
-
-                                        }
-                                        
-                                        Task {
-                                            viewModel.content = ""
-                                        }
-                                        
-                                        Task {
+                    AddPhoto()
+                    ZStack {
+                        VStack(alignment: .leading){
+                            Text("What do you want to tell us?")
+                            TextEditorView()
+                                .toolbar {
+                                    ToolbarItem(placement: .navigationBarLeading) {
+                                        Button("Cancel") {
                                             presentationMode.wrappedValue.dismiss()
                                         }
                                     }
+                                    ToolbarItem(placement: .navigationBarTrailing) {
+                                        Button("Publish") {
+                                            arrayCount = viewModel.myMessages.messages.count
+                                            
+                                            Task {
+                                                viewModel.message = try await viewModel.postMessage(content: viewModel.content)
+
+                                            }
+                                            
+                                            Task {
+                                                viewModel.content = ""
+                                            }
+                                            
+                                            Task {
+                                                presentationMode.wrappedValue.dismiss()
+                                            }
+                                        }
+                                    }
                                 }
-                            }
-                    }
-                
-                
-                Spacer()}
-        }.accentColor(.teal)
+                        }
+                    
+                    
+                    Spacer()}
+            }.accentColor(.teal)
+        }
         
         
     }

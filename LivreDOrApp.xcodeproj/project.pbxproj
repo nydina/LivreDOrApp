@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB0A7FAE290C23FD006CB10D /* UpdateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0A7FAD290C23FD006CB10D /* UpdateButton.swift */; };
+		BB0A7FB0290C7021006CB10D /* UpdateMessageDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0A7FAF290C7021006CB10D /* UpdateMessageDetail.swift */; };
 		BB1338502906C16D00329B4F /* LivreDOrAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB13384F2906C16D00329B4F /* LivreDOrAppApp.swift */; };
 		BB1338522906C16D00329B4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1338512906C16D00329B4F /* ContentView.swift */; };
 		BB1338542906C16F00329B4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB1338532906C16F00329B4F /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB0A7FAD290C23FD006CB10D /* UpdateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateButton.swift; sourceTree = "<group>"; };
+		BB0A7FAF290C7021006CB10D /* UpdateMessageDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMessageDetail.swift; sourceTree = "<group>"; };
 		BB13384C2906C16D00329B4F /* LivreDOrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivreDOrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB13384F2906C16D00329B4F /* LivreDOrAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivreDOrAppApp.swift; sourceTree = "<group>"; };
 		BB1338512906C16D00329B4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 				BB139E1F290821AF00160BED /* AddPhoto.swift */,
 				BB139E1D2907D33100160BED /* FormView.swift */,
 				BBC2B173290A71B800273339 /* TextEditorView.swift */,
+				BB0A7FAD290C23FD006CB10D /* UpdateButton.swift */,
+				BB0A7FAF290C7021006CB10D /* UpdateMessageDetail.swift */,
 				BB1338612906C34B00329B4F /* DetailView.swift */,
 				BB6399A229096B66006D5EC5 /* ErrorView.swift */,
 				BB6399A6290980C5006D5EC5 /* RetryButton.swift */,
@@ -198,6 +204,7 @@
 			files = (
 				BBC2B174290A71B800273339 /* TextEditorView.swift in Sources */,
 				BB139E1E2907D33100160BED /* FormView.swift in Sources */,
+				BB0A7FB0290C7021006CB10D /* UpdateMessageDetail.swift in Sources */,
 				BB1338522906C16D00329B4F /* ContentView.swift in Sources */,
 				BB6399A7290980C5006D5EC5 /* RetryButton.swift in Sources */,
 				BB139E1C2907D25300160BED /* AddButton.swift in Sources */,
@@ -208,6 +215,7 @@
 				BB1338682906C5BA00329B4F /* MessageViewModel.swift in Sources */,
 				BB6399A529097FD8006D5EC5 /* RefreshActionPerformer.swift in Sources */,
 				BB1338652906C37900329B4F /* Message.swift in Sources */,
+				BB0A7FAE290C23FD006CB10D /* UpdateButton.swift in Sources */,
 				BB1338502906C16D00329B4F /* LivreDOrAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

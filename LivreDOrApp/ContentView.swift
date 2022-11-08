@@ -12,14 +12,14 @@ struct ContentView: View {
     @State private var arrayCount = 0
     var body: some View {
         NavigationView {
-            
+
             List {
                 ForEach(viewModel.myMessages.messages, id: \.id) {
-                    text in
+                    message in
                     NavigationLink(destination: {
-                        DetailView(message: text)
+                        DetailView(message: message)
                     }, label: {
-                        RowView(messageContent: text.content)
+                        RowView(messageContent: message.content)
                     })
                 }
                 .onDelete { i in i.forEach { index in
@@ -54,11 +54,13 @@ struct ContentView: View {
             .refreshable {
                 await viewModel.reload()
             }
+            
             .overlay(alignment: .top) {
                 if viewModel.error != nil {
                     ErrorView(error: $viewModel.error)
                 }
             }
+            
             .navigationTitle("Message")
             .navigationBarTitleDisplayMode(.large)
             .navigationBarItems(trailing: AddButton(arrayCount: $arrayCount))
