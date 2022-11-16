@@ -20,6 +20,7 @@
 		BB139E1C2907D25300160BED /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB139E1B2907D25300160BED /* AddButton.swift */; };
 		BB139E1E2907D33100160BED /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB139E1D2907D33100160BED /* FormView.swift */; };
 		BB139E20290821AF00160BED /* AddPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB139E1F290821AF00160BED /* AddPhoto.swift */; };
+		BB157D9C2924F75800A8CF6C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB157D9B2924F75800A8CF6C /* User.swift */; };
 		BB6399A329096B66006D5EC5 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6399A229096B66006D5EC5 /* ErrorView.swift */; };
 		BB6399A529097FD8006D5EC5 /* RefreshActionPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6399A429097FD8006D5EC5 /* RefreshActionPerformer.swift */; };
 		BB6399A7290980C5006D5EC5 /* RetryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6399A6290980C5006D5EC5 /* RetryButton.swift */; };
@@ -42,6 +43,7 @@
 		BB139E1B2907D25300160BED /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		BB139E1D2907D33100160BED /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		BB139E1F290821AF00160BED /* AddPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhoto.swift; sourceTree = "<group>"; };
+		BB157D9B2924F75800A8CF6C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BB6399A229096B66006D5EC5 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		BB6399A429097FD8006D5EC5 /* RefreshActionPerformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshActionPerformer.swift; sourceTree = "<group>"; };
 		BB6399A6290980C5006D5EC5 /* RetryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryButton.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				BB1338642906C37900329B4F /* Message.swift */,
+				BB157D9B2924F75800A8CF6C /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				BB139E1E2907D33100160BED /* FormView.swift in Sources */,
 				BB0A7FB0290C7021006CB10D /* UpdateMessageDetail.swift in Sources */,
 				BB1338522906C16D00329B4F /* ContentView.swift in Sources */,
+				BB157D9C2924F75800A8CF6C /* User.swift in Sources */,
 				BB6399A7290980C5006D5EC5 /* RetryButton.swift in Sources */,
 				BB139E1C2907D25300160BED /* AddButton.swift in Sources */,
 				BB13386A290701B100329B4F /* RowView.swift in Sources */,

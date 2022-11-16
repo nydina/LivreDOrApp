@@ -62,6 +62,6 @@ struct UpdateMessageDetail: View {
 
 struct UpdateMessageDetail_Previews: PreviewProvider {
     static var previews: some View {
-        UpdateMessageDetail(message: Message(id: 1, content: "Hello you", createdAt: ""), showingFormView: false)
+        UpdateMessageDetail(message: Message(id: 1, content: "Hello you", createdAt: "",updatedAt: "",userId: 0, user: User(id: 0, username: "Dina", email: "hello@hello.fr", password: "123", createdAt: "", updatedAt: "")), showingFormView: false)
     }
 }

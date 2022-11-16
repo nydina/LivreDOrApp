@@ -29,7 +29,7 @@ struct FormView: View {
                                     }
                                     ToolbarItem(placement: .navigationBarTrailing) {
                                         Button("Publish") {
-                                            arrayCount = viewModel.myMessages.messages.count
+                                            arrayCount = viewModel.messages.count
                                             
                                             Task {
                                                 viewModel.message = try await viewModel.postMessage(content: viewModel.content)

@@ -29,7 +29,7 @@ enum MessageError : Error {
 
 
 class MessageViewModel : ObservableObject {
-    @Published var myMessages = MyData(messages: [Message]())
+    @Published var messages = [Message]()
     
     @Published var error: Error?
     @Published var content: String = ""
@@ -37,9 +37,9 @@ class MessageViewModel : ObservableObject {
     @Published var message : Message?
     
     //   throw: ma fonction peut retourner une exception
-    func getMessage() async throws -> MyData {
+    func getMessage() async throws -> [Message] {
         //        1. Definir l'URL
-        guard let url = URL(string: "http://localhost:8080/index")
+        guard let url = URL(string: "http://localhost:8000/api/messages")
         else {
             throw MessageError.badURL
         }
@@ -62,7 +62,7 @@ class MessageViewModel : ObservableObject {
         
         //        6. Décoder les données de la réponse du serveur(data) avec l'objet JSONDecoder avec la méthode .decode()
         let jsonDecoder = JSONDecoder()
-        let decoded = try jsonDecoder.decode(MyData.self, from: data)
+        let decoded = try jsonDecoder.decode([Message].self, from: data)
         
         //        6bis. Definir la stratégie du décodage du "snake_case" vers le "camelCase"
 //        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -175,7 +175,7 @@ class MessageViewModel : ObservableObject {
     
    @MainActor func reload() async {
         do {
-            myMessages = try await getMessage()
+            messages = try await getMessage()
             error = nil
         } catch {
             self.error = error

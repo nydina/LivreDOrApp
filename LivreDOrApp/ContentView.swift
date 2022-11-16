@@ -14,7 +14,7 @@ struct ContentView: View {
         NavigationView {
 
             List {
-                ForEach(viewModel.myMessages.messages, id: \.id) {
+                ForEach(viewModel.messages, id: \.id) {
                     message in
                     NavigationLink(destination: {
                         DetailView(message: message)
@@ -22,22 +22,22 @@ struct ContentView: View {
                         RowView(messageContent: message.content)
                     })
                 }
-                .onDelete { i in i.forEach { index in
-                    let message = viewModel.myMessages.messages[index]
-                    Task {
-                        viewModel.myMessages.messages.remove(at: index)
-                    }
-                    
-                    Task {
-                        try await viewModel.deleteMessage(id: message.id)
-                    }
-                }
-                }
+//                .onDelete { i in i.forEach { index in
+//                    let message = viewModel.myMessages.messages[index]
+//                    Task {
+//                        viewModel.myMessages.messages.remove(at: index)
+//                    }
+//
+//                    Task {
+//                        try await viewModel.deleteMessage(id: message.id)
+//                    }
+//                }
+//                }
             }
             
             //refresh automatically
             .onChange(of: arrayCount, perform: { _ in
-                arrayCount = viewModel.myMessages.messages.count
+                arrayCount = viewModel.messages.count
                 Task {
                     await viewModel.reload()
                 }
@@ -46,7 +46,7 @@ struct ContentView: View {
             //read list from API
             .onAppear {
                 Task {
-                    viewModel.myMessages = try await viewModel.getMessage()
+                    viewModel.messages = try await viewModel.getMessage()
                 }
             }
             

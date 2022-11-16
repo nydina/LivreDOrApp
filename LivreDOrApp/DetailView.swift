@@ -62,7 +62,7 @@ struct DetailView_Previews: PreviewProvider {
 //    @EnvironmentObject var viewModel: MessageViewModel
     static var previews: some View {
         NavigationView {
-            DetailView(message: Message(id: 0, content: "Hello you", createdAt: ""))
+            DetailView(message: Message(id: 0, content: "Hello you", createdAt: "", updatedAt: "", userId: 0, user: User(id: 0, username: "", email: "email@email.com", password: "123", createdAt: "", updatedAt: "")))
         }
 //            .environmentObject(MessageViewModel())
     }
